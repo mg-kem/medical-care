@@ -1,28 +1,19 @@
 import AuthModal from '../components/auth-modal';
-import { useState } from 'react';
+import { useAppSelector, useAppDispatch } from '../components/hooks/useStore';
+import { toggleOpenModal } from '../store/actions';
+
 
 export default function MainPage() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const handleOpenModal = () => {
-    setIsModalOpen(true);
-  };
+  const isOpenModal = useAppSelector((state) => state.isModalOpen);
+  const dispatch = useAppDispatch();
 
   const handleCloseModal = () => {
-    setIsModalOpen(false);
-  };
+    dispatch(toggleOpenModal(false))
+  }
+
   return (
     <div className="container">
-      <header className="header">
-        <div className="header__inner">
-          <div className="logo">logo</div>
-          <nav className="nav">
-            <a href="#" className="nav__link">Контакты</a>
-            <a href="#" className="nav__link button button--header" onClick={handleOpenModal}>Войти</a>
-          </nav>
-        </div>
-      </header>
-      {isModalOpen && <AuthModal onClose={handleCloseModal} />}
+      {isOpenModal && <AuthModal onClose={handleCloseModal} />}
       <section className='hero'>
         <div className="hero__title-container">
           <div className="title-wrapper">
