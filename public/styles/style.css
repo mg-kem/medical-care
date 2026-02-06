@@ -1,0 +1,219 @@
+@import './fonst.css';
+/* ===== Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat';
+  color: #1f2a44;
+  background-color: #ffffff;
+}
+
+/* ===== Layout ===== */
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* ===== Header ===== */
+.header {
+  margin-top: 18px;
+  padding: 0 70px;
+  border-bottom: 1px solid black
+}
+
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 72px;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 49px;
+}
+
+/* ===== Buttons ===== */
+.button {
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  border: 1px solid #ff6b5f;
+  background-color: transparent;
+  color: #ff6b5f;
+}
+
+.button--primary {
+  background-color: #ff6b5f;
+  color: #ffffff;
+}
+
+.button--small {
+  padding: 8px 20px;
+}
+
+/* ===== Hero ===== */
+.hero {
+  padding: 80px 0;
+  width: 1046px;
+  margin: 0 auto;
+
+}
+.hero__title-container {
+  margin-bottom: 80px;
+
+}
+
+.title-wrapper {
+  width: 727px;
+  padding: 16.5px 0;
+  height: 280px;
+
+}
+
+.hero__title {
+  font-size: 58px;
+  font-weight: 700;
+  line-height: 80px;
+  letter-spacing: 0.2px;
+  margin-bottom: 35px;
+  color: #252B42;
+}
+
+.hero__actions {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 64px;
+}
+
+/* ===== Cards ===== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.card {
+  background-color: #ffffff;
+  padding: 32px;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.card__icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #e84545;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.card__title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.card__line {
+  width: 32px;
+  height: 3px;
+  background-color: #e84545;
+  margin-bottom: 12px;
+}
+
+.card__text {
+  color: #8a8a8a;
+}
+
+/* ===== Profile ===== */
+.profile {
+  padding: 120px 0;
+}
+
+.profile__title {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 32px;
+}
+
+.profile__actions {
+  display: flex;
+  gap: 16px;
+}
+
+/* ===== Modal ===== */
+.modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal__content {
+  background-color: #ffffff;
+  padding: 32px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.modal__title {
+  font-size: 24px;
+  margin-bottom: 24px;
+}
+
+/* ===== Form ===== */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form input {
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #cccccc;
+}
+
+.form__error {
+  color: #e84545;
+  font-size: 14px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .hero__title {
+    font-size: 32px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__actions,
+  .profile__actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header__inner {
+    height: 64px;
+  }
+}
