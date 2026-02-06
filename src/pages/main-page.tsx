@@ -1,6 +1,8 @@
 import AuthModal from '../components/auth-modal';
-import { useAppSelector, useAppDispatch } from '../components/hooks/useStore';
+import { useAppSelector, useAppDispatch } from '../hooks/useStore';
 import { toggleOpenModal } from '../store/actions';
+import { Link } from 'react-router-dom';
+import { AppRoute } from '../const.ts';
 
 
 export default function MainPage() {
@@ -9,6 +11,10 @@ export default function MainPage() {
 
   const handleCloseModal = () => {
     dispatch(toggleOpenModal(false))
+  }
+
+  const handleOpenModal = () => {
+    dispatch(toggleOpenModal(true))
   }
 
   return (
@@ -21,8 +27,8 @@ export default function MainPage() {
               Место для получения медицинской помощи
             </h1>
             <div className="hero__actions">
-              <button className="button button--primary">Войти</button>
-              <button className="button">Контакты</button>
+              <button className="button button--primary" onClick={handleOpenModal}>Войти</button>
+              <Link to={AppRoute.CONTACTS} className="button">Контакты</Link>
             </div>
           </div>
         </div>
