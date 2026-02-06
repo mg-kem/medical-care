@@ -1,4 +1,16 @@
+import AuthModal from '../components/auth-modal';
+import { useState } from 'react';
+
 export default function MainPage() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
   return (
     <div className="container">
       <header className="header">
@@ -6,11 +18,11 @@ export default function MainPage() {
           <div className="logo">logo</div>
           <nav className="nav">
             <a href="#" className="nav__link">Контакты</a>
-            <a href="#" className="nav__link button button--header">Войти</a>
+            <a href="#" className="nav__link button button--header" onClick={handleOpenModal}>Войти</a>
           </nav>
         </div>
       </header>
-
+      {isModalOpen && <AuthModal onClose={handleCloseModal} />}
       <section className='hero'>
         <div className="hero__title-container">
           <div className="title-wrapper">
