@@ -18,4 +18,4 @@ export default function AuthModal({ onClose }: AuthModalProps) {
       </div>
     </div>
   )
-}
+}   
